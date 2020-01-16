@@ -26,11 +26,11 @@ public class HandleRequest implements IFormaPago{
 
 	public void request(Integer monto) {
 	  this.setNext(list.get(0));
-	  for (int i = 0; i < list.size()-1; i++) {
+	  
+	  for (int i = 0; i < list.size()-1; i++) 
 		   list.get(i).setNext(list.get(i+1));
-	  }
-	
-	  next.request(monto);	  
+	  	
+	  this.next.request(monto);	  
 	}
 
 }
