@@ -2,23 +2,82 @@ package com.patterns.creacionales.builder;
 
 public class Persona {
 
-	private final int id;
-	private final String nombre;
-	private final String apellido;
-	private final String direccion;
-	private final String telefono;
-	private final String celular;
+	private  int id;
+	private  String nombre;
+	private  String apellido;
+	private  String direccion;
+	private  String telefono;
+	private  String celular;
 	
-	private Persona(PersonaBuilder builder) {
-		this.id=builder.id;
-		this.nombre=builder.nombre;
-		this.apellido=builder.apellido;
-		this.direccion=builder.direccion;
-		this.telefono=builder.telefono;
-		this.celular=builder.celular;
+	public Persona() {		
+	
+	}
+
+	public static PersonaBuilder build(int id) {
+		return new PersonaBuilder(id);
 	}
 	
-	
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+
+	public String getCelular() {
+		return celular;
+	}
+
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion
@@ -26,47 +85,7 @@ public class Persona {
 	}
 
 
-	public static class PersonaBuilder{
-		
-		private  int id;
-		private  String nombre;
-		private  String apellido;
-		private  String direccion;
-		private  String telefono;
-		private  String celular;
-		
-		
-		public PersonaBuilder(int id,String nombre) {
-		   this.nombre=nombre;
-		   this.id=id;
-		}
-		
-		public PersonaBuilder apellido(String apellido) {
-			this.apellido=apellido;
-			return this;
-		}
-		
-		public PersonaBuilder telefono(String telefono) {
-			this.telefono=telefono;
-			return this;
-		}
-		
-		public PersonaBuilder direccion(String direccion) {
-			this.direccion=direccion;
-			return this;
-		}
-		
-		public PersonaBuilder celular(String celular) {
-			this.celular=celular;
-			return this;
-		}
-		
-		public Persona build() {
-			return new Persona(this);
-		}
-		
-		
-	}
+	
 	
 	
 }

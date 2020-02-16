@@ -4,7 +4,8 @@ public class AppMain {
 
 	public static void main(String[] args) {
 		
-		Persona persona=new Persona.PersonaBuilder(1, "Yesid")
+		Persona persona= Persona.build(1).
+				  nombre("Yesid")
 				 .apellido("Murillo")
 				 .celular("3128373")
 				 .build();
